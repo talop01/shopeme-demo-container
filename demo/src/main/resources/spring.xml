@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- bean definitions here -->
+    <bean id="alien" class="bt.edu.gcit.Alien" autowire="byType">
+        <!-- setter injection -->
+        <!-- <property name="age" value="32"></property> -->
+
+        <!-- <property name="laptop" ref="laptop1"></property> -->
+        <!-- OR -->
+        <property name="laptop">
+            <bean id="laptop1" class="bt.edu.gcit.Laptop"></bean>
+        </property>
+
+        <!-- <constructor-arg index="0" value="32" />
+        <constructor-arg index="1" ref="laptop" /> -->
+    </bean>
+
+    <!-- scope -->
+    <!-- <bean id="laptop1" class="bt.edu.gcit.Laptop" lazy-init="true"></bean> -->
+    <!-- <bean id="desktop" class="bt.edu.gcit.Desktop" primary="true"></bean> -->
+</beans>
